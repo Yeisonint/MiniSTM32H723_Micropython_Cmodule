@@ -1,0 +1,6 @@
+[submodule "MiniSTM32H723_Micropython_Port"]
+	path = MiniSTM32H723_Micropython_Port
+	url = https://github.com/nspsck/MiniSTM32H723_Micropython_Port.git
+[submodule "micropython"]
+	path = micropython
+	url = https://github.com/micropython/micropython.git
