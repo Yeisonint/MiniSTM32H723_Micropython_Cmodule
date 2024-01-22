@@ -1,9 +1,9 @@
 #include "lcd.h"
 #include "font.h"
 #include "spi.h"
-// #include "tim.h"
+#include "tim.h"
 
-#include "board.h"
+// #include "board.h"
 
 //SPI��ʾ���ӿ�
 //LCD_RST
@@ -34,7 +34,7 @@ static int32_t lcd_recvdata(uint8_t* pdata,uint32_t length);
 ST7735_IO_t st7735_pIO = {
 	lcd_init,
 	NULL,
-	NULL,
+	0,
 	lcd_writereg,
 	lcd_readreg,
 	lcd_senddata,
@@ -76,7 +76,7 @@ void LCD_Test(void)
 			LCD_SetBrightness((get_tick() - tick) * 100 / 1000);
 		else if (get_tick() - tick <= 3000)
 		{
-			sprintf((char *)&text, "%03d", (get_tick() - tick - 1000) / 10);
+			sprintf((char *)&text, "%03ld", (get_tick() - tick - 1000) / 10);
 			LCD_ShowString(ST7735Ctx.Width - 30, 1, ST7735Ctx.Width, 16, 16, text);
 			ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, ST7735Ctx.Height - 3, (get_tick() - tick - 1000) * ST7735Ctx.Width / 2000, 3, 0xFFFF);
 		}
@@ -93,9 +93,9 @@ void LCD_Test(void)
 
 	sprintf((char *)&text, "WeAct Studio");
 	LCD_ShowString(4, 4, ST7735Ctx.Width, 16, 16, text);
-	sprintf((char *)&text, "STM32H7xx 0x%X", HAL_GetDEVID());
+	sprintf((char *)&text, "STM32H7xx 0x%lX", HAL_GetDEVID());
 	LCD_ShowString(4, 22, ST7735Ctx.Width, 16, 16, text);
-	sprintf((char *)&text, "LCD ID:0x%X", st7735_id);
+	sprintf((char *)&text, "LCD ID:0x%lX", st7735_id);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
 	LCD_Light(100, 200);

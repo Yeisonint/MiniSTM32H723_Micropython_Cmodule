@@ -1,8 +1,10 @@
 #include "py/obj.h"
 #include "py/runtime.h"
 #include "st7735/lcd.h"
+#include "st7735/tim.h"
 
 STATIC mp_obj_t miniutils_stt7735_init() {
+    MX_TIM1_Init();
     LCD_Test();
     return MP_OBJ_NULL;
 }
