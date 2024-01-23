@@ -12,6 +12,14 @@
         "type_traits": "c",
         "utility": "c",
         "ostream": "c",
-        "ranges": "c"
+        "ranges": "c",
+        "stm32h723xx.h": "c",
+        "stm32h7xx_hal_gpio.h": "c",
+        "stm32f4xx_hal_spi.h": "c",
+        "stm32h7xx_hal.h": "c",
+        "stm32h7xx_hal_conf_base.h": "c",
+        "stm32h7xx_hal_spi.h": "c",
+        "lcd.h": "c",
+        "stdio.h": "c"
     }
 }

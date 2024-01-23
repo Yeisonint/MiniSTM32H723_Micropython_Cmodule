@@ -4,8 +4,12 @@
 extern "C" {
 #endif
 
+// #define HAL_SPI_MODULE_ENABLED (1)
+// #define HAL_SPI_MODULE_ENABLED
+
 #include "stm32h723xx.h"
 #include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_spi.h"
 #include "stm32h7xx_hal_gpio.h"
 
 // DCMI - PINS
@@ -77,10 +81,22 @@ extern "C" {
 #define BUTTON_PIN  GPIO_PIN_13
 #define BUTTON_PORT GPIOC
 
+// ATTIBUTES
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
+static TIM_HandleTypeDef htim1;
+static SPI_HandleTypeDef hspi4;
+#pragma GCC diagnostic pop
+
+
+// FUNCTIONS
 void board_led_init(void);
 void board_button_init(void);
-void board_led_set(uint8_t set);
-void board_led_toggle();
+uint8_t board_button_state(void);
+void board_led_set(uint8_t);
+void board_led_toggle(void);
+uint8_t TFT_backlight_init(void);
+uint8_t TFT_SPI_init(void);
 
 #ifdef __cplusplus
 }
