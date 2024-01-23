@@ -82,11 +82,11 @@ extern "C" {
 #define BUTTON_PORT GPIOC
 
 // ATTIBUTES
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-variable"
-static TIM_HandleTypeDef htim1;
-static SPI_HandleTypeDef hspi4;
-#pragma GCC diagnostic pop
+// #pragma GCC diagnostic push
+// #pragma GCC diagnostic ignored "-Wunused-variable"
+extern TIM_HandleTypeDef htim1;
+extern SPI_HandleTypeDef hspi4;
+// #pragma GCC diagnostic pop
 
 
 // FUNCTIONS

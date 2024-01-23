@@ -10,6 +10,9 @@ extern "C" {
 #include "stm32h7xx_hal_spi.h"
 #include "stm32h7xx_hal_gpio.h"
 
+TIM_HandleTypeDef htim1;
+SPI_HandleTypeDef hspi4;
+
 void board_led_init(void){
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   
@@ -176,6 +179,16 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef *spiHandle)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF5_SPI4;
     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(GPIOE, LCD_CS_PIN|LCD_WR_RS_PIN, GPIO_PIN_RESET);
+
+    /*Configure GPIO pins : PEPin PEPin */
+    GPIO_InitStruct.Pin = LCD_CS_PIN|LCD_WR_RS_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
   }
 }
 
@@ -213,6 +226,7 @@ uint8_t TFT_SPI_init(void){
   hspi4.Init.MasterReceiverAutoSusp = SPI_MASTER_RX_AUTOSUSP_DISABLE;
   hspi4.Init.MasterKeepIOState = SPI_MASTER_KEEP_IO_STATE_DISABLE;
   hspi4.Init.IOSwap = SPI_IO_SWAP_DISABLE;
+  HAL_SPI_MspInit(&hspi4);
   return HAL_SPI_Init(&hspi4);
 }
 

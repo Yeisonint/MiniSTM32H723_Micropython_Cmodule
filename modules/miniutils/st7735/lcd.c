@@ -53,8 +53,8 @@ void LCD_Test(void){
 	ST7735_RegisterBusIO(&st7735_pObj,&st7735_pIO);
 	ST7735_LCD_Driver.Init(&st7735_pObj,ST7735_FORMAT_RBG565,&ST7735Ctx);
 	ST7735_LCD_Driver.ReadID(&st7735_pObj,&st7735_id);
+	LCD_SetBrightness(0);
 
-	LCD_SetBrightness(100);
 	extern unsigned char WeActStudiologo_160_80[];
 	ST7735_LCD_Driver.DrawBitmap(&st7735_pObj,0,0,WeActStudiologo_160_80);
 }
@@ -74,8 +74,8 @@ void LCD_Test(void){
 	
 // 	LCD_SetBrightness(0);
 	
-// 	extern unsigned char WeActStudiologo_160_80[];
-// 	ST7735_LCD_Driver.DrawBitmap(&st7735_pObj,0,0,WeActStudiologo_160_80);
+	// extern unsigned char WeActStudiologo_160_80[];
+	// ST7735_LCD_Driver.DrawBitmap(&st7735_pObj,0,0,WeActStudiologo_160_80);
 	
 //   uint32_t tick = get_tick();
 // 	while (HAL_GPIO_ReadPin(BUTTON_PORT, BUTTON_PIN) != GPIO_PIN_SET)
@@ -118,7 +118,7 @@ void LCD_SetBrightness(uint32_t Brightness)
 
 uint32_t LCD_GetBrightness(void)
 {
-		return __HAL_TIM_GetCompare(LCD_Brightness_timer, LCD_Brightness_channel);
+	return __HAL_TIM_GetCompare(LCD_Brightness_timer, LCD_Brightness_channel);
 }
 
 

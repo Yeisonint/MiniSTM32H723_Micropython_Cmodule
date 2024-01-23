@@ -20,6 +20,7 @@
         "stm32h7xx_hal_conf_base.h": "c",
         "stm32h7xx_hal_spi.h": "c",
         "lcd.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "random": "c"
     }
 }

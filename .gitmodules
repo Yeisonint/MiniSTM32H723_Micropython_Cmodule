@@ -4,3 +4,6 @@
 [submodule "micropython"]
 	path = micropython
 	url = https://github.com/micropython/micropython.git
+[submodule "WeActStudio.MiniSTM32H723"]
+	path = WeActStudio.MiniSTM32H723
+	url = https://github.com/WeActStudio/WeActStudio.MiniSTM32H723.git
