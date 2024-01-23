@@ -2,6 +2,16 @@
     "files.associations": {
         "mphal.h": "c",
         "runtime.h": "c",
-        "stm32h7xx_hal_tim.h": "c"
+        "stm32h7xx_hal_tim.h": "c",
+        "ministm32h723_board.h": "c",
+        "cstddef": "c",
+        "array": "c",
+        "compare": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "ostream": "c",
+        "ranges": "c"
     }
 }
