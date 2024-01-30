@@ -21,6 +21,9 @@
         "stm32h7xx_hal_spi.h": "c",
         "lcd.h": "c",
         "stdio.h": "c",
-        "random": "c"
+        "random": "c",
+        "mpprint.h": "c",
+        "timeutils.h": "c",
+        "*.tcc": "c"
     }
 }

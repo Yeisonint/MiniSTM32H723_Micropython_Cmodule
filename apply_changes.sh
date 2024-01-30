@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if [ ! -d "./micropython/ports/stm32/boards/WEACTH723VG" ]; then
-    echo "Copy MiniSTM32H723 board to stm32 boards in micropython"
-    cp -r ./MiniSTM32H723_Micropython_Port/WEACTH723VG ./micropython/ports/stm32/boards
-fi
+rm -rf ./micropython/ports/stm32/boards/WEACTH723VG
+cp -r ./MiniSTM32H723_Micropython_Port/WEACTH723VG ./micropython/ports/stm32/boards
+# if [ ! -d "./micropython/ports/stm32/boards/WEACTH723VG" ]; then
+#     echo "Copy MiniSTM32H723 board to stm32 boards in micropython"
+#     cp -r ./MiniSTM32H723_Micropython_Port/WEACTH723VG ./micropython/ports/stm32/boards
+# fi
 
 # Apply some changes according to
 if [ $(grep -ic "MICROPY_HW_RCC_OSPI_CLKSOURCE" ./micropython/ports/stm32/system_stm32.c) -eq 0 ]
