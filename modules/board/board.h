@@ -41,6 +41,8 @@ extern "C"
 #define FrameWidth 128
 #define FrameHeight 160
 #endif
+
+// extern void FrameEvent(DCMI_HandleTypeDef *hdcmi);
 // picture buffer
 static uint16_t pic[FrameWidth][FrameHeight];
 static volatile uint32_t DCMI_FrameIsReady = 0;

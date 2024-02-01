@@ -18,6 +18,7 @@ void MX_DCMI_Init(void)
     hdcmi.Init.ByteSelectStart = DCMI_OEBS_ODD;
     hdcmi.Init.LineSelectMode = DCMI_LSM_ALL;
     hdcmi.Init.LineSelectStart = DCMI_OELS_ODD;
+    // hdcmi.FrameEventCallback = FrameEvent;
     if (HAL_DCMI_Init(&hdcmi) != HAL_OK)
     {
         Error_Handler();
