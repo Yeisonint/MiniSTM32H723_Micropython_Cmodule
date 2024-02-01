@@ -1,1 +1,1 @@
-include(${CMAKE_CURRENT_LIST_DIR}/st7735/micropython.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/board/micropython.cmake)

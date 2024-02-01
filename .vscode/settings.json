@@ -24,6 +24,15 @@
         "random": "c",
         "mpprint.h": "c",
         "timeutils.h": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "stm32_hal_legacy.h": "c",
+        "stm32h7xx_hal_dcmi.h": "c",
+        "stm32h7xx_hal_mdma.h": "c",
+        "stm32h7xx_hal_fdcan.h": "c",
+        "stm32h7xx_hal_adc.h": "c",
+        "stm32h7xx_hal_dma.h": "c",
+        "stm32h7xx_hal_i2c_ex.h": "c",
+        "stm32h7xx_hal_i2c.h": "c",
+        "stm32h7xx_hal_spi_ex.h": "c"
     }
 }
